@@ -24,6 +24,11 @@ public class Livro {
         this.genero = genero;
     }
 
+    @Override
+    public String toString() {
+        return  titulo + '\n' + autor;
+    }
+
     public int getId() {
         return id;
     }
