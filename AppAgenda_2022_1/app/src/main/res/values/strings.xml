@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">AppAgenda_2022_1</string>
+
+    <string name="txtNome">Name: </string>
+    <string name="txtNomeHint">Enter here your Name: </string>
+    <string name="txtFone">Phone: </string>
+    <string name="txtFoneHint">Enter here your Phone: </string>
+    <string name="txtEstado">State: </string>
+    <string name="txtCidade">City: </string>
+
+    <string-array name="estados">
+        <item>Select the State...</item>
+        <item>PR</item>
+        <item>RS</item>
+        <item>SC</item>
+    </string-array>
+
+
+
+</resources>
