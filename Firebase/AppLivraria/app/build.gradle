@@ -6,7 +6,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.example.applivraria"
+        applicationId "br.pro.adalto.applivraria"
         minSdk 26
         targetSdk 31
         versionCode 1
@@ -28,14 +28,15 @@ android {
 }
 
 apply plugin: 'com.android.application'
+
 // Add this line
 apply plugin: 'com.google.gms.google-services'
 
 
-
 dependencies {
 
-    implementation platform('com.google.firebase:firebase-bom:30.0.1')
+
+    implementation platform('com.google.firebase:firebase-bom:30.0.2')
 
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'

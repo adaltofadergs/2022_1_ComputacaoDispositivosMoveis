@@ -5,7 +5,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:7.0.3"
+        classpath "com.android.tools.build:gradle:7.0.2"
 
         classpath 'com.google.gms:google-services:4.3.10'
 
@@ -13,13 +13,6 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
-
-//allprojects {
-//    repositories {
-//        // Check that you have the following line (if not, add it):
-//        google()  // Google's Maven repository
-//    }
-//}
 
 task clean(type: Delete) {
     delete rootProject.buildDir

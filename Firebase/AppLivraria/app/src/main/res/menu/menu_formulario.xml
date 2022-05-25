@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:title="Adicionar Gênero..."
-        android:id="@+id/itemMenuAddGenero" />
-    <item
-        android:title="Sair"
-        android:id="@+id/itemMenuSair" />
-</menu>

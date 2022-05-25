@@ -2,6 +2,13 @@
     <string name="app_name">AppLivraria</string>
 
     <string-array name="generos">
-        <item>Selecione o Gênero...</item>
+        <item>Selecione o gênero...</item>
+        <item>Ação</item>
+        <item>Aventura</item>
+        <item>Romance</item>
+        <item>Suspence</item>
+        <item>Variado</item>
     </string-array>
+
+
 </resources>

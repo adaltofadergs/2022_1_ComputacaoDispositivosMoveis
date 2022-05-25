@@ -1,4 +1,4 @@
-package com.example.applivraria;
+package br.pro.adalto.applivraria;
 
 import org.junit.Test;
 
