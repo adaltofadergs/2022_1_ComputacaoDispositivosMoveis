@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1075389772716",
+    "project_id": "applivraria-ass-2022-1",
+    "storage_bucket": "applivraria-ass-2022-1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1075389772716:android:7a2e8806b41db917be8009",
+        "android_client_info": {
+          "package_name": "com.example.applivraria"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1075389772716-rhgocvpiuq7cug9cqrmel1g22navfvpt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCrSbNFDOZdTNLmpqDtsW-L3ouHkJumvk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1075389772716-rhgocvpiuq7cug9cqrmel1g22navfvpt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

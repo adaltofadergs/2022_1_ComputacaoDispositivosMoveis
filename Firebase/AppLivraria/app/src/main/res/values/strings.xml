@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AppLivraria</string>
+
+    <string-array name="generos">
+        <item>Selecione o Gênero...</item>
+    </string-array>
+</resources>
