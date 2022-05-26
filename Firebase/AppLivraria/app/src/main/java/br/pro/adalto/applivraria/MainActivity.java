@@ -14,6 +14,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.ktx.Firebase;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -53,7 +58,13 @@ public class MainActivity extends AppCompatActivity {
             livro.setGenero( (Genero) spGeneros.getSelectedItem() );
             livro.setAutor( etAutor.getText().toString() );
 
-            LivroDAO.inserir( this, livro );
+//            LivroDAO.inserir( this, livro );
+
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference reference = database.getReference();
+            reference.child("livros").push().setValue( livro );
+
+
 
             finish();
         }
@@ -63,8 +74,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void carregarGeneros(){
         Genero fake = new Genero(0, "Selecione o Gênero...");
-        List<Genero> lista = GeneroDAO.getGeneros(  this );
-        lista.add(0, fake);
+        Genero acao = new Genero(1, "Ação");
+        Genero romance = new Genero(2, "Romance");
+        List<Genero> lista = new ArrayList<>(); // GeneroDAO.getGeneros(  this );
+        lista.add(fake);
+        lista.add(acao);
+        lista.add(romance);
+
 
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, lista );
         spGeneros.setAdapter( adapter );
@@ -108,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 String nome = etNomeGenero.getText().toString();
                 if( !nome.isEmpty() ){
-                    GeneroDAO.inserir(MainActivity.this, nome);
+       //             GeneroDAO.inserir(MainActivity.this, nome);
                     carregarGeneros();
                 }
             }
