@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private Spinner spGeneros;
     private EditText etTitulo, etAutor;
     private Button btnSalvar;
+    private String acao;
+    private Livro livro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,10 +48,21 @@ public class MainActivity extends AppCompatActivity {
 
         carregarGeneros();
 
+        acao = getIntent().getExtras().getString("acao");
+        if( acao.equals("editar")){
+            livro = new Livro();
+            livro.setId(  getIntent().getExtras().getString("idLivro") );
+            etTitulo.setText( getIntent().getExtras().getString("titulo") );
+            etAutor.setText( getIntent().getExtras().getString("autor") );
+        }
+
+
     }
 
     private void salvar(){
-        Livro livro = new Livro();
+        if( acao.equals("inserir")) {
+            livro = new Livro();
+        }
 
         String titulo = etTitulo.getText().toString();
 
@@ -62,7 +75,12 @@ public class MainActivity extends AppCompatActivity {
 
             FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference reference = database.getReference();
-            reference.child("livros").push().setValue( livro );
+
+            if( acao.equals("inserir")) {
+                reference.child("livros").push().setValue(livro);
+            }else {
+                reference.child("livros").child( livro.getId() ).setValue( livro );
+            }
 
 
 

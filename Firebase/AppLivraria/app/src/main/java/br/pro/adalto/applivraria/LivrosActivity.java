@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -55,6 +56,23 @@ public class LivrosActivity extends AppCompatActivity {
                 Intent intent = new Intent(LivrosActivity.this, MainActivity.class);
                 intent.putExtra("acao", "inserir");
                 startActivity( intent );
+            }
+        });
+
+
+        lvLivros.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Livro livroSelecionado = lista.get( position );
+
+                Intent intent = new Intent(LivrosActivity.this, MainActivity.class);
+                intent.putExtra("acao", "editar");
+                intent.putExtra("idLivro", livroSelecionado.getId() );
+                intent.putExtra("titulo", livroSelecionado.getTitulo() );
+                intent.putExtra("autor", livroSelecionado.getAutor() );
+                startActivity( intent );
+
             }
         });
 
